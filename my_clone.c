@@ -9,7 +9,7 @@
 #define CLONES_COUNT 1000
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
-int c[1000];
+int c[CLONES_COUNT + 1];
 char child_stack[STACK_SIZE * CLONES_COUNT];
 
 int child_proc(void* param) {
