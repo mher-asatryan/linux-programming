@@ -25,7 +25,7 @@ int child_proc(void* param) {
 }
 
 int main() {
-    int result[1000];
+    int result[CLONES_COUNT + 1];
     for (int i = 1; i <= CLONES_COUNT; ++i) {
         result[i] = clone(child_proc, child_stack + i * STACK_SIZE,CLONE_VM, &i);
         if (-1 == result[i]) {
